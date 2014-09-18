@@ -3,7 +3,7 @@ package com.arkhm.freshlist.handlers;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.arkhm.freshlist.Front_page;
+import com.arkhm.freshlist.WelcomePageActivity;
 import com.arkhm.freshlist.models.User;
 
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SignupTask extends AsyncTask<String, Void, JSONObject> {
 	String email = "", phone, username, password, tag;
 	User user = new User();
-	Context con = Front_page.context;
+	Context con = WelcomePageActivity.context;
 
 	@Override
 	protected void onPreExecute() {

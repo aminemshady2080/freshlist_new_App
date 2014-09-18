@@ -101,11 +101,11 @@ public class GroceryListActivity extends Activity implements OnClickListener {
 		case R.id.mkbutadd:
 
 			if (description.getText().toString().equals("")) {
-				Front_page.prompt("No grocery name given");
+				WelcomePageActivity.prompt("No grocery name given");
 			} else if (quantifiels.getText().toString().equals("")) {
-				Front_page.prompt("No quantity given");
+				WelcomePageActivity.prompt("No quantity given");
 			} else if (unityField.getText().toString().equals("")) {
-				Front_page.prompt("No Unity given");
+				WelcomePageActivity.prompt("No Unity given");
 			} else {
 
 				thename = description.getText().toString();

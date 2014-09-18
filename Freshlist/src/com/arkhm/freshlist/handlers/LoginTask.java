@@ -9,11 +9,11 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.arkhm.freshlist.Front_page;
+import com.arkhm.freshlist.WelcomePageActivity;
 import com.arkhm.freshlist.models.User;
 
 public class LoginTask extends AsyncTask<String, Void, JSONObject> {
-	Context con = Front_page.context;
+	Context con = WelcomePageActivity.context;
 	ProgressDialog dialog;
 	String email="", phone, tag;
 	User user = new User();

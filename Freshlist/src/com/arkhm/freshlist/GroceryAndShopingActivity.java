@@ -81,7 +81,7 @@ public class GroceryAndShopingActivity extends Activity {
 			switch (v.getId()) {
 			case R.id.addgrocerybut:
 				if (itemfield.getText().toString().equals("")) {
-					Front_page
+					WelcomePageActivity
 							.prompt("No Item Described \n  \t example \n 5 packes of coffee");
 				} else {
 
@@ -95,11 +95,11 @@ public class GroceryAndShopingActivity extends Activity {
 				break;
 			case R.id.donegrocerybut:
 				if (listschedule.getText().toString().equals("")) {
-					Front_page.prompt("No Time and date scheduled");
+					WelcomePageActivity.prompt("No Time and date scheduled");
 				} else if (shopfield.getText().toString().equals("")) {
-					Front_page.prompt("No Shop or supermarket name given");
+					WelcomePageActivity.prompt("No Shop or supermarket name given");
 				} else if (addedList.getChildCount() == 0) {
-					Front_page.prompt("No Groceries added on shopping list");
+					WelcomePageActivity.prompt("No Groceries added on shopping list");
 				} else {
 					listscheduledTime = listschedule.getText().toString();
 					listShop = shopfield.getText().toString();

@@ -22,7 +22,7 @@
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
-            android:name=".Front_page"
+            android:name=".WelcomePageActivity"
             android:label="@string/title_activity_front_page" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

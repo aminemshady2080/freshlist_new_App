@@ -76,7 +76,7 @@ public class HouseHoldActivity extends Activity {
 			switch (v.getId()) {
 			case R.id.addhouseholdbut:
 				if (itemfield.getText().toString().equals("")) {
-					Front_page
+					WelcomePageActivity
 							.prompt("No Item Described \n  \t example \n Wash all clothes and uniforms");
 				} else {
 					itemName = itemfield.getText().toString();
@@ -89,9 +89,9 @@ public class HouseHoldActivity extends Activity {
 				break;
 			case R.id.donehouseholdbut:
 				if (listschedule.getText().toString().equals("")) {
-					Front_page.prompt("No Time and date scheduled");
+					WelcomePageActivity.prompt("No Time and date scheduled");
 				} else if (addedList.getChildCount() == 0) {
-					Front_page
+					WelcomePageActivity
 							.prompt("No HouseHold activity added \n on HouseHold list");
 				} else {
 
