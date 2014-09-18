@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <AutoCompleteTextView
+            android:id="@+id/groceryname"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:ems="10"
+            android:hint="@string/grocery_name"
+            android:imeOptions="actionNext"
+            android:inputType="textAutoComplete"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/groceyquantity"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/_2_5"
+            android:imeActionLabel="@string/add_item"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:textColor="#000000" />
+
+        <AutoCompleteTextView
+            android:id="@+id/groceyunity"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/kilos"
+            android:imeActionLabel="@string/add_item"
+            android:imeOptions="actionDone"
+            android:inputType="textAutoComplete"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/mkbutadd"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="10"
+            android:background="@drawable/add_but"
+            android:textSize="20sp" />
+        <!-- android:text="@string/addit" -->
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/mklv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/from_which_shop_" />
+
+    <AutoCompleteTextView
+        android:id="@+id/shopname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/shop_name"
+        android:imeOptions="actionDone"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/mkbutcontinue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/done_and_continue" />
+
+</LinearLayout>

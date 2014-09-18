@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/address" />
+
+        <EditText
+            android:id="@+id/listnamehousehold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="@string/address"
+            android:imeOptions="actionNext"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/address_comments" />
+
+        <EditText
+            android:id="@+id/schedulefieldhousehold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="@string/address_more_info"
+            android:imeOptions="actionDone"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/review_your_lists_before_send" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+         >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/finalgrocerylv"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+            <ListView
+                android:id="@+id/finalhouseholdlv"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+            <ListView
+                android:id="@+id/finalchilderlv"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+            <ListView
+                android:id="@+id/finalbillslv"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/sendOrder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="50"
+            android:text="@string/send_order" />
+
+        <Button
+            android:id="@+id/saveOrderOnly"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="42.76"
+            android:text="@string/save_only" />
+    </LinearLayout>
+
+</LinearLayout>
