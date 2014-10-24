@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_1"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/listnameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="@string/list_name"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/clicktoschedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+        android:gravity="center"
+        android:text="@string/schedule_time" />
+
+    <LinearLayout
+        android:id="@+id/timesetLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TabHost
+            android:id="@+id/datesTabhost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <LinearLayout
+                android:id="@+id/datesAllLiney"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+                </TabWidget>
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/datePicker1layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" 
+                        >
+
+                        <DatePicker
+                            android:id="@+id/datePicker1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/timePickerlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TimePicker
+                            android:id="@+id/timePicker1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/setit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:drawableLeft="@drawable/ic_action_send_now"
+                android:text="@string/set_time"
+                android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/cancelit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:drawableLeft="@drawable/ic_action_cancel"
+                android:text="@string/cancel"
+                android:textColor="@android:color/background_light" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/choseSeriveLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RadioButton
+            android:id="@+id/seriviceradioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/groceries_and_shopping" />
+
+        <RadioButton
+            android:id="@+id/seriviceradioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/packages_delivery" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/confirmlistLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/finishbuildListBut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:drawableLeft="@drawable/ic_action_accept"
+            android:text="@string/build_list"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/cancebuildListBut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:drawableLeft="@drawable/ic_action_cancel"
+            android:onClick="cancelTime"
+            android:text="@string/cancel"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+
+</LinearLayout>

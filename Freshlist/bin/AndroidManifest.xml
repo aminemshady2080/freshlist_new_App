@@ -10,20 +10,47 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.AppCompat.Light" >
+                <activity
+            android:name=".WelcomePageActivity"
+            android:label="@string/title_activity_front_page"
+            android:screenOrientation="portrait" >
+
+        </activity>
+        
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
+            android:name=".AddItemsToListActivity"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".WelcomePageActivity"
-            android:label="@string/title_activity_front_page" >
+            android:name=".ContactInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.arkhm.freshlist.UserDashBoardActivity"
+            android:label="@string/user_dashboard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.arkhm.freshlist.BuildAListActivity"
+            android:label="@string/build_a_new_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.arkhm.freshlist.EditListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.arkhm.freshlist.FreshlistLauncher"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,16 +58,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.arkhm.freshlist.GroceryListActivity"
-            android:label="@string/compose_your_order_list" >
+            android:name="com.arkhm.freshlist.UserAccountSettingsActivity"
+            android:label="@string/user_account_settings"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.arkhm.freshlist.ServicesActivity" >
-        </activity>
-        <activity android:name="com.arkhm.freshlist.GroceryAndShopingActivity" >
-        </activity>
-        <activity android:name="com.arkhm.freshlist.HouseHoldActivity" >
-        </activity>
-        <activity android:name="com.arkhm.freshlist.ContactInfoActivity" >
+        <activity
+            android:name="com.arkhm.freshlist.HelpAndAboutActivity"
+            android:label="@string/help_and_user_guide"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

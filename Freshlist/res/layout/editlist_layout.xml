@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <AutoCompleteTextView
+            android:id="@+id/editlistgrocerydescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="85"
+            android:ems="10"
+            android:hint="@string/grocery_name"
+            android:imeOptions="actionDone"
+            android:imeActionLabel="@string/add_item"
+            android:inputType="textAutoComplete"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/editlistaddgrocerybut"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="15"
+            android:background="@drawable/add_but" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/editlistlv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/editlistLnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:weightSum="1" >
+
+        <TextView
+            android:id="@+id/editlistdonebut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.33"
+            android:drawableTop="@drawable/ic_action_send_now"
+            android:gravity="center"
+            android:text="@string/send_list"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/editlistdetailsbut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.33"
+            android:drawableTop="@drawable/ic_action_edit"
+            android:gravity="center"
+            android:text="@string/list_details"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/editlistdeletesbut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.33"
+            android:drawableTop="@drawable/ic_action_discard"
+            android:gravity="center"
+            android:text="@string/delete_list"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+body{
+color:white;
+font-size:200%;
+font-weight:bold;
+}
+#wrapper{
+background-color:#000;
+margin:2px auto;
+width:90%;
+text-align:center;
+}
+h1{
+size:2em;
+}
+h2{
+size:1.5em;
+}h3{
+size:1.2m;
+}
+img{
+width:90%;
+border:.1em solid red;
+margin:0.35em;
+text-align:center;
+}
+.titles{
+text-align:center;
+color:green;
+text-decoration:underline;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_1"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/useraccountListview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_weight="80">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/useraccountbottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="20" >
+
+        <Button
+            android:id="@+id/useraccountsendbut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="50"
+            android:drawableLeft="@drawable/ic_action_send_now"
+            android:text="@string/submit"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/useraccountcancelbut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="50"
+            android:drawableLeft="@drawable/ic_action_cancel"
+            android:text="@string/cancel"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+
+</LinearLayout>

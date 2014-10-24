@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="InlinedApi" severity="ignore" />
+    <issue id="NestedWeights">
+        <ignore path="res/layout/user_dashboard_layout.xml" />
+        <ignore path="res/layout/usersetting_layout.xml" />
+    </issue>
+    <issue id="NewApi" severity="ignore" />
+    <issue id="RtlHardcoded" severity="ignore">
+        <ignore path="res/layout/additems_tolist_layout.xml" />
+        <ignore path="res/layout/build_a_list_layout.xml" />
+        <ignore path="res/layout/contact_info_layout.xml" />
+        <ignore path="res/layout/custom_timepicker.xml" />
+        <ignore path="res/layout/editlist_details_layout.xml" />
+        <ignore path="res/layout/editlist_layout.xml" />
+        <ignore path="res/layout/singledata2.xml" />
+        <ignore path="res/layout/user_dashboard_layout.xml" />
+        <ignore path="res/layout/usersetting_layout.xml" />
+    </issue>
+</lint>

@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="@string/user_settings"/>
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/ic_action_overflow"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="@string/more">
+        <menu>
+            <item
+                android:id="@+id/action_logout"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom"
+                android:title="@string/log_out">
+            </item>
+            <item
+                android:id="@+id/action_help"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom"
+                android:title="@string/help_guide">
+            </item>
+            <item
+                android:id="@+id/action_about"
+                android:orderInCategory="100"
+                app:showAsAction="ifRoom"
+                android:title="@string/about_freshlist">
+            </item>
+        </menu>
+    </item>
+
+</menu>

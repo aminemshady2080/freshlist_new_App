@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menufromgallery"
+        android:title="@string/choose_from_gallery">
+    </item>
+    <item
+        android:id="@+id/menutakepicture"
+        android:title="@string/take_picture">
+    </item>
+    <item
+        android:id="@+id/menudeletepic"
+        android:title="@string/remove_this_picture">
+    </item>
+
+</menu>
