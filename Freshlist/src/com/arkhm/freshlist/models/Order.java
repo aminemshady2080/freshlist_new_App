@@ -1,30 +1,44 @@
 package com.arkhm.freshlist.models;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
+
+import com.arkhm.freshlist.handlers.NetworkJsonHandler;
 
 public class Order {
 
-	private ItemList theItemList;
-	private ContactInfo contactsInfo;
+	private String theItemList;
+	private String contactsInfo;
 	private String Status;
-	private Date orderTimeStamp;
-	private String market;
+	private String orderTimeStamp;
+	private String orderSchedule;
+	// private String orderUrl =
+	// "http://10.0.2.2/freshlist/freshlist/freshlist_user_includes/freshlist_order.php";
+	private String orderUrl = "http://freshbunch.heroku.com/api/v1/order/?format=json";
+	NetworkJsonHandler jsonParser = new NetworkJsonHandler();
 
 	public Order() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(ItemList theItemList, ContactInfo contactsInfo, String market) {
+	public Order(String theItemList, String contactsInfo, String status,
+			String orderTimeStamp, String orderSchedule) {
 		super();
 		this.theItemList = theItemList;
 		this.contactsInfo = contactsInfo;
-		this.market = market;
+		this.Status = status;
+		this.orderTimeStamp = orderTimeStamp;
+		this.orderSchedule = orderSchedule;
 	}
 
 	/**
 	 * @return the theItemList
 	 */
-	public ItemList getTheItemList() {
+	public String getTheItemList() {
 		return theItemList;
 	}
 
@@ -32,14 +46,14 @@ public class Order {
 	 * @param theItemList
 	 *            the theItemList to set
 	 */
-	public void setTheItemList(ItemList theItemList) {
+	public void setTheItemList(String theItemList) {
 		this.theItemList = theItemList;
 	}
 
 	/**
 	 * @return the contactsInfo
 	 */
-	public ContactInfo getContactsInfo() {
+	public String getContactsInfo() {
 		return contactsInfo;
 	}
 
@@ -47,7 +61,7 @@ public class Order {
 	 * @param contactsInfo
 	 *            the contactsInfo to set
 	 */
-	public void setContactsInfo(ContactInfo contactsInfo) {
+	public void setContactsInfo(String contactsInfo) {
 		this.contactsInfo = contactsInfo;
 	}
 
@@ -55,7 +69,7 @@ public class Order {
 	 * @return the status
 	 */
 	public String getStatus() {
-		return Status;
+		return this.Status;
 	}
 
 	/**
@@ -63,13 +77,13 @@ public class Order {
 	 *            the status to set
 	 */
 	public void setStatus(String status) {
-		Status = status;
+		this.Status = status;
 	}
 
 	/**
 	 * @return the orderTimeStamp
 	 */
-	public Date getOrderTimeStamp() {
+	public String getOrderTimeStamp() {
 		return orderTimeStamp;
 	}
 
@@ -77,23 +91,43 @@ public class Order {
 	 * @param orderTimeStamp
 	 *            the orderTimeStamp to set
 	 */
-	public void setOrderTimeStamp(Date orderTimeStamp) {
+	public void setOrderTimeStamp(String orderTimeStamp) {
 		this.orderTimeStamp = orderTimeStamp;
 	}
 
 	/**
-	 * @return the market
+	 * @return the orderSchedule
 	 */
-	public String getMarket() {
-		return market;
+	public String getOrderSchedule() {
+		return orderSchedule;
 	}
 
 	/**
-	 * @param market
-	 *            the market to set
+	 * @param orderSchedule
+	 *            the orderSchedule to set
 	 */
-	public void setMarket(String market) {
-		this.market = market;
+	public void setOrderSchedule(String orderSchedule) {
+		this.orderSchedule = orderSchedule;
 	}
 
+	public JSONObject sendOrder(String mobile, String contactsInfo,
+			String status, String orderTimeStamp, String comment) {
+		//this.theItemList = theItemList;
+		this.contactsInfo = contactsInfo;
+		this.Status = status;
+		this.orderTimeStamp = orderTimeStamp;
+		// this.orderSchedule = orderSchedule;
+		List<NameValuePair> values = new ArrayList<NameValuePair>();
+		values.add(new BasicNameValuePair("stage", "S"));
+		values.add(new BasicNameValuePair("address", contactsInfo));
+		values.add(new BasicNameValuePair("comment", comment));
+		values.add(new BasicNameValuePair("mobile", mobile));
+
+		// values.add(new BasicNameValuePair("order_timestamp",
+		// orderTimeStamp));
+		// values.add(new BasicNameValuePair("order_listname", theItemList));
+		// values.add(new BasicNameValuePair("order_schedule", orderSchedule));
+
+		return jsonParser.getDataFromUrl(orderUrl, values);
+	}
 }

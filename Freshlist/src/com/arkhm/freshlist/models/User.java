@@ -11,8 +11,11 @@ import com.arkhm.freshlist.handlers.NetworkJsonHandler;
 
 public class User {
 
+	// private String userAuthUrl =
+	// "http://10.0.2.2/freshlist/freshlist/freshlistAuth.php";
+	private String userAuthUrl = "http://freshbunch.heroku.com/api/v1/user/?format=json";
+	private String user_id;
 	private String email;
-	private String userAuthUrl2 = "http://10.0.2.2/freshlist/freshlist/freshlistAuth.php";
 	private String username;
 	private String first_name;
 	private String last_name;
@@ -23,6 +26,21 @@ public class User {
 
 	public User() {
 		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @return the user_id
+	 */
+	public String getUser_id() {
+		return user_id;
+	}
+
+	/**
+	 * @param user_id
+	 *            the user_id to set
+	 */
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public User(String email) {
@@ -126,7 +144,7 @@ public class User {
 	 * @param email
 	 * @param username
 	 * @param password
-	 * @return a json object tobe handler by asynk task in signup user
+	 * @return a json object to be handler by asynktask in signing up user
 	 */
 	public JSONObject signUpUser(String email, String username, String password) {
 		this.email = email;
@@ -136,22 +154,47 @@ public class User {
 		values.add(new BasicNameValuePair("email", email));
 		values.add(new BasicNameValuePair("username", username));
 		values.add(new BasicNameValuePair("password", password));
-		values.add(new BasicNameValuePair("tag", "signup"));
+	//	values.add(new BasicNameValuePair("tag", "signup"));
 
-		JSONObject json = jsonParser.getDataFromUrl(userAuthUrl2, values);
+		JSONObject json = jsonParser.getDataFromUrl(userAuthUrl, values);
 		return json;
 	}
-/**
- * @param email
- * @return a json object tobe handler by asynk task in logging up a user
- */
+
+	/**
+	 * 
+	 * @param email
+	 * @param username
+	 * @param password
+	 * @return a json object to be handler by asynktask in updating user
+	 */
+	public JSONObject upDateUser(String user_id, String email, String username,
+			String password) {
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.user_id = user_id;
+		List<NameValuePair> values = new ArrayList<>();
+		values.add(new BasicNameValuePair("user_id", user_id));
+		values.add(new BasicNameValuePair("email", email));
+		values.add(new BasicNameValuePair("username", username));
+		values.add(new BasicNameValuePair("password", password));
+	//	values.add(new BasicNameValuePair("tag", "update_user"));
+
+		JSONObject json = jsonParser.getDataFromUrl(userAuthUrl, values);
+		return json;
+	}
+
+	/**
+	 * @param email
+	 * @return a json object tobe handler by asynk task in logging up a user
+	 */
 	public JSONObject loginUser(String email) {
 		this.email = email;
 		List<NameValuePair> values = new ArrayList<>();
 		values.add(new BasicNameValuePair("email", email));
-		values.add(new BasicNameValuePair("tag", "login"));
+		//values.add(new BasicNameValuePair("tag", "login"));
 
-		JSONObject json = jsonParser.getDataFromUrl(userAuthUrl2, values);
+		JSONObject json = jsonParser.getDataFromUrl(userAuthUrl, values);
 
 		return json;
 	}

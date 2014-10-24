@@ -4,9 +4,18 @@ public class ContactInfo {
 
 	private String address;
 	private String addressComments;
-	
+	private ItemList OrdersItemList = new ItemList();
+
 	public ContactInfo() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public ContactInfo(String address, String addressComments,
+			ItemList orderItemList) {
+		super();
+		this.address = address;
+		this.addressComments = addressComments;
+		this.OrdersItemList = orderItemList;
 	}
 
 	/**
@@ -15,16 +24,10 @@ public class ContactInfo {
 	public String getAddress() {
 		return address;
 	}
-	
-
-	public ContactInfo(String address, String addressComments) {
-		super();
-		this.address = address;
-		this.addressComments = addressComments;
-	}
 
 	/**
-	 * @param address the address to set
+	 * @param address
+	 *            the address to set
 	 */
 	public void setAddress(String address) {
 		this.address = address;
@@ -38,11 +41,26 @@ public class ContactInfo {
 	}
 
 	/**
-	 * @param addressComments the addressComments to set
+	 * @param addressComments
+	 *            the addressComments to set
 	 */
 	public void setAddressComments(String addressComments) {
 		this.addressComments = addressComments;
 	}
 
-	
+	/**
+	 * @return the ordersItemList
+	 */
+	public ItemList getOrdersItemList() {
+		return OrdersItemList;
+	}
+
+	/**
+	 * @param ordersItemList
+	 *            the ordersItemList to set
+	 */
+	public void setOrdersItemList(ItemList ordersItemList) {
+		OrdersItemList = ordersItemList;
+	}
+
 }

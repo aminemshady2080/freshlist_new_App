@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/back_1"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="1dp"
         android:weightSum="100" >
 
@@ -14,16 +16,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/address" />
+            android:text="@string/address" 
+            />
 
         <EditText
-            android:id="@+id/listnamehousehold"
+            android:id="@+id/addressfield"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
             android:hint="@string/address"
+            android:inputType="textPersonName"
             android:imeOptions="actionNext"
             android:textColor="#000000" />
     </LinearLayout>
@@ -31,6 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="1dp"
         android:weightSum="100" >
 
@@ -41,13 +46,39 @@
             android:text="@string/address_comments" />
 
         <EditText
-            android:id="@+id/schedulefieldhousehold"
+            android:id="@+id/addressmorefield"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:ems="10"
             android:hint="@string/address_more_info"
+            android:inputType="textPersonName"
+            android:imeOptions="actionNext"
+            android:textColor="#000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:weightSum="100" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/phone_number" />
+
+        <EditText
+            android:id="@+id/phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
             android:imeOptions="actionDone"
             android:textColor="#000000" />
     </LinearLayout>
@@ -61,8 +92,7 @@
         android:id="@+id/horizontalScrollView1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="50"
-         >
+        android:layout_weight="50" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,19 +106,7 @@
                 android:layout_margin="5dp" />
 
             <ListView
-                android:id="@+id/finalhouseholdlv"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp" />
-
-            <ListView
-                android:id="@+id/finalchilderlv"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp" />
-
-            <ListView
-                android:id="@+id/finalbillslv"
+                android:id="@+id/finalpackagedeliverylv"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp" />
@@ -107,17 +125,23 @@
             android:id="@+id/sendOrder"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="50"
-            android:text="@string/send_order" />
+            android:drawableLeft="@drawable/ic_action_send_now"
+            android:text="@string/send_order"
+            android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/saveOrderOnly"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="42.76"
-            android:text="@string/save_only" />
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="50"
+            android:drawableLeft="@drawable/ic_action_save"
+            android:text="@string/save_only"
+            android:textColor="@android:color/background_light" />
     </LinearLayout>
 
 </LinearLayout>

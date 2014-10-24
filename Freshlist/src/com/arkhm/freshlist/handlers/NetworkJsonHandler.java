@@ -39,16 +39,21 @@ public class NetworkJsonHandler {
 				Log.d("suuccess post", "the code is "
 						+ httpResponse.getStatusLine().getStatusCode());
 
+			} else {
+				Log.d("Not success post ", "the code is "
+						+ httpResponse.getStatusLine().getStatusCode()
+						+ " \nand reason is "
+						+ httpResponse.getStatusLine().getReasonPhrase());
 			}
 			// return JSON String to business models to use
 		} catch (Exception e) {
-			Log.e("Error in getin data fromurl", e.getMessage());
+			Log.e("Error in getin data from url ", e.getMessage());
 
 		}
 		try {
 			theDataObject = new JSONObject(makeJsonDataFromBuffer(inputStream));
 		} catch (JSONException e) {
-			Log.e("error in json convertion", e.getMessage());
+			Log.e("error in json convertion ", e.getMessage());
 
 			e.printStackTrace();
 		}

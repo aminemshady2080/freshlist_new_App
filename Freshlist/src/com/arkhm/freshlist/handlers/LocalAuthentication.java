@@ -1,5 +1,6 @@
 package com.arkhm.freshlist.handlers;
 
+
 public class LocalAuthentication {
 
 	public LocalAuthentication() {
@@ -8,12 +9,12 @@ public class LocalAuthentication {
 
 	public boolean cleanFields(String email, String username, String password) {
 
-		if (email.length() == 0 && username.length() == 0
-				&& password.length() == 0) {
-			return false;
+		if (!(email.length() == 0 && username.length() == 0
+				&& password.length() == 0)) {
+			return true;
 
 		} else {
-			return true;
+			return false;
 		}
 	}
 
@@ -92,5 +93,5 @@ public class LocalAuthentication {
 		}
 		return isclean;
 	}
-
+	
 }

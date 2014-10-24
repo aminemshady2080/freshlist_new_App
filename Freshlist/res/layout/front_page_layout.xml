@@ -2,7 +2,8 @@
     style="@android:style/Theme.Translucent"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/back_1">
 
 
         <EditText
@@ -79,7 +80,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/signupnu" />
+            android:background="@drawable/signup1" />
 
         <Button
             android:id="@+id/loginBut"
@@ -89,6 +90,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/loginnu"/>
+            android:background="@drawable/login1"/>
   
 </LinearLayout>

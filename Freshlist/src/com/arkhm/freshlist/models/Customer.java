@@ -1,6 +1,5 @@
 package com.arkhm.freshlist.models;
 
-import java.util.Date;
 
 public class Customer extends User {
 
@@ -71,12 +70,10 @@ public class Customer extends User {
 	 * @param this method is called when a customer has provided the data which
 	 *        makeup an item
 	 * */
-	public void creatItem(String itemName, int itemQuantity, String itemUnity) {
+	public void creatItem(String itemName, int itemNote) {
 		// here we create an item based on values or data entered by customer
 		Item item = new Item();
 		item.setItemName(itemName);
-		item.setItemQuantity(itemQuantity);
-		item.setItemUnity(itemUnity);
 
 		// here we add the current item to the item list and set created time to
 		// the current time
@@ -94,9 +91,9 @@ public class Customer extends User {
 		itemlist.remove(itemPositionInList);
 	}
 
-	public void createItemList(String title, String time) {
+	public void createItemList(String title, String time,String timeStamp) {
 		ItemList itemlist = new ItemList();
-		itemlist.setTimeStamp(new Date());
+		itemlist.setTimeStamp(timeStamp);
 		itemlist.setTitle(title);
 	}
 
@@ -109,10 +106,7 @@ public class Customer extends User {
 	public void buildOrder(ItemList theItemList, ContactInfo contactsInfo,
 			String market) {
 		Order order = new Order();
-		order.setTheItemList(theItemList);
-		order.setContactsInfo(contactsInfo);
-		order.setMarket(market);
-		order.setOrderTimeStamp(new Date());
+		order.setStatus(market);
 
 	}
 
